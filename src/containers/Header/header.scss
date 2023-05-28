@@ -1,0 +1,15 @@
+.header {
+    display: grid;
+    grid-template-areas: 
+    "a b";
+    grid-template-columns: 1fr 4fr 1fr;
+
+    .title {
+        grid-area: a;
+    }
+
+    .add_item {
+        grid-area: b;
+    }
+}
+
