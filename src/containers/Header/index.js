@@ -15,6 +15,7 @@ const Header = () => {
 				<h1>Recepty</h1>
 			</div>
 			<div className='add_item'>
+				{/* TODO: adjust position of the plus button to the center  */}
 				<a href='/'>
 					<i className="cil-plus"></i>
 				</a>
