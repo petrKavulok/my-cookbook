@@ -1,15 +1,24 @@
 .header {
-    display: grid;
-    grid-template-areas: 
-    "a b";
-    grid-template-columns: 1fr 4fr 1fr;
+	height: 70px;
+	padding: 0 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 .125rem .5rem rgba(0,0,0,.15);
+	.title {
+		display: flex;
+		.back_button {
+			margin-right: 0.5rem;
+		}
+		h1 {
+			margin-bottom: 0;
+		}
+	}
 
-    .title {
-        grid-area: a;
-    }
-
-    .add_item {
-        grid-area: b;
-    }
+	.add_item {
+		justify-self: end;
+		& a {
+			text-decoration: none;
+		}
+	}
 }
-

@@ -1,19 +1,23 @@
+import { useHistory } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import './header.scss';
 
 const Header = () => {
+
+	// const history = useHistory();
+
 	return (
 		<div className='header'>
 			<div className='title'>
-				<Button outline primary>
-					<i class="cil-arrow-circle-left"></i>
-				</Button>
+				{/* <Button outline color='primary' className='back_button' onClick={() => console.log('hello')}>
+					<i className="cil-arrow-left"></i>
+				</Button> */}
 				<h1>Recepty</h1>
 			</div>
 			<div className='add_item'>
-				<Button outline primary>
-					<i class="cil-plus"></i>
-				</Button>
+				<a href='/'>
+					<i className="cil-plus"></i>
+				</a>
 			</div>
 		</div>
 	)
