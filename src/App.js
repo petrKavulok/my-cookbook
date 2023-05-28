@@ -1,6 +1,6 @@
 
 import './App.scss';
-import Home from './home';
+import List from './list';
 import { Header } from './containers';
 
 function App() {
@@ -8,7 +8,7 @@ return (
 	<div className="App">
 		<Header />
 		yellow world
-		<Home />
+		<List />
 	</div>
 );
 }
