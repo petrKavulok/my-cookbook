@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
+import ListItemCard from './ListItemCard';
+import './list.scss';
+
+import { Container } from 'reactstrap';
 
 const List = () => {
 
-	const [recipes, setRecipes] = useState(10);
+	const [recipes, setRecipes] = useState([]);
 	const [limit, setLimit] = useState(10);
 
 	useEffect(() => {
@@ -28,7 +32,17 @@ const List = () => {
 	}
 
 	return (
-		<p>hello</p>
+		<Container className='recipes_container'>
+			{recipes.length > 0 ?
+				recipes.map(item => <ListItemCard key={item.id} recipe={item}/>)
+				:
+				<p> Yeah, you ain't got that yummy-yum
+				That yummy-yum, that yummy-yummy
+				yet, you ain't got that yummy-yum
+				That yummy-yum, that yummy-yummy yet.
+				</p>
+			}
+		</Container>
 	)
 };
 
