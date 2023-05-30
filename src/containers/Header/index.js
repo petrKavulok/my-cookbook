@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom'
 import './header.scss';
 
 const Header = () => {
@@ -16,9 +17,9 @@ const Header = () => {
 			</div>
 			<div className='add_item'>
 				{/* TODO: adjust position of the plus button to the center  */}
-				<a href='/'>
+				<Link to='/new-recipe'>
 					<i className="cil-plus"></i>
-				</a>
+				</Link>
 			</div>
 		</div>
 	)
