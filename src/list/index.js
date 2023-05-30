@@ -27,7 +27,7 @@ const List = () => {
 			console.log('jsonData: ', jsonData);
 			setRecipes(jsonData);
 		} catch (error) {
-			console.log(`Looks like we ain't eatin' tonight..`, error);
+			console.error(`Looks like we ain't eatin' tonight..`, error);
 		}
 	}
 
