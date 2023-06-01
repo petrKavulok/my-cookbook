@@ -10,7 +10,7 @@ const List = () => {
 	const [limit, setLimit] = useState(10);
 
 	useEffect(() => {
-		getList()
+		getList();
 	}, []);
 
 	const getList = async () => {
