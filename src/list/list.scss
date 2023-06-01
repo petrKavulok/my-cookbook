@@ -5,12 +5,12 @@ img.list_item_cover_pic {
     // margin-right: 1.5rem;
 }
 
-.recipe {
+.recipe-list-item {
     display: flex;
     justify-content: space-evenly;
     padding: 1rem 0;
 	border-bottom: 2px solid rgba(0,0,0,.03);
-    &_duration {
+    .duration {
         display: flex;
         align-items: center;
     }
@@ -23,6 +23,9 @@ img.list_item_cover_pic {
     align-items: flex-start;
     h2 {
         margin-bottom: 0;
+    }
+    a {
+        text-decoration: unset;
     }
 }
 
