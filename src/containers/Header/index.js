@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import './header.scss';
 
-const Header = () => {
+const Header = (props) => {
 
 	// const history = useHistory();
 
