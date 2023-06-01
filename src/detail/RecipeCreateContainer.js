@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useForm, useFieldArray, Controller } from 'react-hook-form';
 import { Form, FormGroup, Input, FormText, Button, InputGroup } from 'reactstrap';
-import './recipe.scss';
 
 const RecipeCreateContainer = () => {
 
@@ -17,8 +16,8 @@ useEffect(() => {
   }, [remove])
 
 return (
-	<Form className='create-recipe-form' onSubmit={handleSubmit((data) => console.log('yooo: ', data))}>
-		<div className='input-set mt-3'>
+	<Form className='create_recipe_form' onSubmit={handleSubmit((data) => console.log('yooo: ', data))}>
+		<div className='input_set mt-3'>
 			<FormText>Název receptu</FormText>
 			<Input
 				type="text"
@@ -28,10 +27,10 @@ return (
 					emptyInput: value => (value && value.toString().length !== 0) || 'No name recepty jsou no-go'
 				}})}
 			/>
-			{errors['recipe-title'] && <span className='input-error'>{errors['recipe-title'].message}</span>}
+			{errors['recipe-title'] && <span className='input_error'>{errors['recipe-title'].message}</span>}
 		</div>
 
-		<div className='input-set mt-3'>
+		<div className='input_set mt-3'>
 			<FormText>Úvodní text</FormText>
 			<Input
 				type="text"
@@ -40,7 +39,7 @@ return (
 				{...register('description')}
 			/>
 		</div>
-		<h4 className='create-ingredients mt-3'>ingredience</h4>
+		<h4 className='create_ingredients mt-3'>ingredience</h4>
 		<FormGroup className='ingredients'>
 			<InputGroup>
 				<Input
@@ -53,7 +52,7 @@ return (
 			</InputGroup>
 			{fields && fields.map((item, idx) => {
 				return (
-						<InputGroup key={item.id} className='ingredient-item'>
+						<InputGroup key={item.id} className='ingredient_item'>
 							<Controller
 								render={({ field }) => <Input placeholder='Vaše ingredience' {...field} />}
 								name={`ingredients.${idx}.ingredient`}
@@ -74,14 +73,14 @@ return (
 			<Button
 				outline
 				// size="sm"
-				className='append-button mt-3'
+				className='append_button mt-3'
 				onClick={() => append({ingredient: ''})}
 			>
 				<span className="cil-plus" />Přidat
 			</Button>
 		</FormGroup>
 
-		<div className=' mt-3'>
+		<div className='mt-3'>
 			<Input
 				type="text"
 				id="how-to"
@@ -90,7 +89,7 @@ return (
 				{...register('how-to')}
 			/>
 		</div>
-		<div className='input-set mt-3'>
+		<div className='input_set mt-3'>
 			<Input
 				type="number"
 				id="duration"
