@@ -38,19 +38,14 @@ return (
 						{routes.map((route, idx) => {
 							return (
 								<Route
-								key={idx}
-								path={`${route.path}`}
-								exact={route.exact}
-								name={route.name}
-								// element={props => (
-								// 		<>
-								// 					<route.component {...props} {...route.props} />
-								// 		</>
-								// 	)}
+									key={idx}
+									path={`${route.path}`}
+									exact={route.exact}
+									name={route.name}
 									element={route.component}
-									/>
-									)
-								})}
+								/>
+							)
+						})}
 					</Routes>
 				</Suspense>
 					{/* <List /> */}
