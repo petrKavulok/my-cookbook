@@ -1,11 +1,12 @@
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Header } from './containers';
 import logo from './assets/ackee_placeholder.png';
 import List from './list';
-import RecipeDetailContainer from './detail/RecipeDetailContainer';
-import RecipeCreateContainer from './detail/RecipeCreateContainer';
 import './App.scss';
+import './detail/recipe.scss';
+const RecipeDetailContainer = lazy(() => import('./detail/RecipeDetailContainer'));
+const RecipeCreateContainer = lazy(() => import('./detail/RecipeCreateContainer'));
 
 function App() {
 
