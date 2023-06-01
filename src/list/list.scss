@@ -5,7 +5,7 @@ img.list_item_cover_pic {
     // margin-right: 1.5rem;
 }
 
-.recipe-list-item {
+.recipe_list_item {
     display: flex;
     justify-content: space-evenly;
     padding: 1rem 0;
@@ -27,6 +27,10 @@ img.list_item_cover_pic {
     a {
         text-decoration: unset;
     }
+}
+
+.list_item_rating img {
+    height: 20px;
 }
 
 .recipes_container {
