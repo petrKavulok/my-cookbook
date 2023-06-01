@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ListItemCard = ({recipe}) => {
 
 	return (
-		<div className='recipe'>
+		<div className='recipe-list-item'>
 			<img
 				src={recipe.img ?? logo}
 				alt={recipe.name}
@@ -17,7 +17,7 @@ const ListItemCard = ({recipe}) => {
 				<div>
 					{recipe.score}
 				</div>
-				<div className='recipe_duration'>
+				<div className='duration'>
 					<i className='cil-clock pr-2'></i>
 					<span>{recipe.duration} min.</span>
 				</div>
