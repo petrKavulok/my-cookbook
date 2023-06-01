@@ -1,10 +1,13 @@
 import logo from '../assets/ackee_placeholder.png';
 import { Link } from 'react-router-dom';
+import { getLogo } from '../components';
 
 const ListItemCard = ({recipe}) => {
 
+	let src = getLogo(recipe.score);
+
 	return (
-		<div className='recipe-list-item'>
+		<div className='recipe_list_item'>
 			<img
 				src={recipe.img ?? logo}
 				alt={recipe.name}
@@ -14,10 +17,11 @@ const ListItemCard = ({recipe}) => {
 				<Link to={`/detail/${recipe.id}`}>
 					<h2>{recipe.name}</h2>
 				</Link>
-				<div>
-					{recipe.score}
+				<div className='list_item_rating'>
+					<img src={src}></img>
+					{/* {recipe.score} */}
 				</div>
-				<div className='duration'>
+				<div className='list_item_duration'>
 					<i className='cil-clock pr-2'></i>
 					<span>{recipe.duration} min.</span>
 				</div>
