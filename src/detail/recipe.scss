@@ -1,0 +1,86 @@
+$ackee-blue: #0E00FF;
+$ackee-pink: #FF02FF;
+
+.create-recipe-form {
+	padding: 1.5rem;
+	input {
+		border: 0px;
+		border-bottom: 1px solid grey;
+		border-radius: unset;
+		padding: 0.375rem 0;
+	}
+	h4 {
+		color: $ackee-blue;
+		text-transform: uppercase;
+		text-align: start;
+	}
+}
+
+.create-ingredients {
+	text-transform: uppercase;
+}
+
+.input-set {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	.input-error {
+		color: rgb(233, 161, 161);
+	}
+}
+
+.append-button{
+	display: flex;
+	align-items: center;
+}
+
+.recipe {
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	color: #554D44;
+	div[class^="recipe-"], div[class*=" recipe-"] {
+		padding: 0 1.5rem;
+	}
+
+	h3 {
+		color: $ackee-blue;
+		font-weight: bold;
+	}
+	.recipe-rating {
+		display: flex;
+		justify-content: space-between;
+		height: 60px;
+		background-color: $ackee-pink;
+		color:white;
+		font-weight: bold;
+	}
+	.recipe-info {
+		font-weight: bold;
+	}
+	.ingredience-list li{
+		text-align: start;
+	}
+}
+
+	.append-button {
+		color: $ackee-pink;
+		border: 2px solid $ackee-pink;
+		transition-duration: 0.4s;
+		// &:hover {
+		// 	color: white;
+		// 	background-color: $ackee-pink;
+		// 	border: 4px solid $ackee-pink;
+		// }
+	}
+
+	.append-button:hover {
+		color: white;
+		background-color: $ackee-pink;
+		border: 2px solid $ackee-pink;
+	}
+
+
+	.ingredient-item {
+		margin-top: 0.5rem;
+	}
