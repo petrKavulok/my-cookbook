@@ -1,7 +1,7 @@
 $ackee-blue: #0E00FF;
 $ackee-pink: #FF02FF;
 
-.create-recipe-form {
+.create_recipe_form {
 	padding: 1.5rem;
 	input {
 		border: 0px;
@@ -16,20 +16,20 @@ $ackee-pink: #FF02FF;
 	}
 }
 
-.create-ingredients {
+.create_ingredients {
 	text-transform: uppercase;
 }
 
-.input-set {
+.input_set {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	.input-error {
+	.input_error {
 		color: rgb(233, 161, 161);
 	}
 }
 
-.append-button{
+.append_button{
 	display: flex;
 	align-items: center;
 }
@@ -39,7 +39,7 @@ $ackee-pink: #FF02FF;
 	flex-direction: column;
 	text-align: start;
 	color: #554D44;
-	div[class^="recipe-"], div[class*=" recipe-"] {
+	div[class^="recipe_"], div[class*=" recipe_"] {
 		padding: 0 1.5rem;
 	}
 
@@ -47,7 +47,7 @@ $ackee-pink: #FF02FF;
 		color: $ackee-blue;
 		font-weight: bold;
 	}
-	.recipe-rating {
+	.recipe_rating {
 		display: flex;
 		justify-content: space-between;
 		height: 60px;
@@ -55,15 +55,27 @@ $ackee-pink: #FF02FF;
 		color:white;
 		font-weight: bold;
 	}
-	.recipe-info {
+	.recipe_info {
 		font-weight: bold;
 	}
-	.ingredience-list li{
+	.ingredience_list li{
 		text-align: start;
+	}
+	.recipe_user_rating {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 150px;
+		background-color: $ackee-blue;
+		color: white;
+		h3 {
+			color: white;
+		}
 	}
 }
 
-	.append-button {
+	.append_button {
 		color: $ackee-pink;
 		border: 2px solid $ackee-pink;
 		transition-duration: 0.4s;
@@ -74,13 +86,13 @@ $ackee-pink: #FF02FF;
 		// }
 	}
 
-	.append-button:hover {
+	.append_button:hover {
 		color: white;
 		background-color: $ackee-pink;
 		border: 2px solid $ackee-pink;
 	}
 
 
-	.ingredient-item {
+	.ingredient_item {
 		margin-top: 0.5rem;
 	}
