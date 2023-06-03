@@ -7,7 +7,7 @@ img.list_item_cover_pic {
 
 .recipe_list_item {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 1rem 0;
 	border-bottom: 2px solid rgba(0,0,0,.03);
     .duration {
@@ -21,6 +21,7 @@ img.list_item_cover_pic {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+    margin-left: 0.75rem;
     h2 {
         margin-bottom: 0;
     }
@@ -39,4 +40,29 @@ img.list_item_cover_pic {
         color: #0E00FF;
         font-weight: bold;
     }
+    & .list_wrapper {
+        margin-top: 70px
+    }
+}
+
+@media (min-width: 786px) {
+    .list_item_info {
+        width: 400px;
+        align-items: stretch;
+    }
+}
+
+@media (min-width: 992px) {
+    .list_wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .recipe_list_item {
+        flex: auto;
+    }
+    .list_item_info {
+        width: 300px;
+    }
+
 }
