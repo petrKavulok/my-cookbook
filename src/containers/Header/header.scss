@@ -1,18 +1,44 @@
+@import '../../assets/styles';
+
 .header {
+	position: absolute;
+	width: 100%;
 	height: 70px;
 	padding: 0 1.5rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	// display: flex;
+	// justify-content: space-between;
+	// align-items: center;
 	box-shadow: 0 .125rem .5rem rgba(0,0,0,.15);
+	& .btn i {
+		font-weight: bold;
+	}
+	& .header_content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: auto;
+		max-width: 1000px;
+		padding-top: 14px;
+	}
+	&.reverse {
+		box-shadow: unset;
+		& button {
+			color: white!important;
+		}
+	}
 	.title {
 		display: flex;
-		.back_button {
-			margin-right: 0.5rem;
-		}
+		align-items: center;
 		h1 {
 			margin-bottom: 0;
 		}
+	}
+	.back_button {
+		margin-right: 0.5rem;
+		display: flex;
+		border: none;
+		align-items: center;
+		height: 40px;
 	}
 
 	.add_item {
