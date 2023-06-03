@@ -1,25 +1,39 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom'
 import './header.scss';
 
-const Header = (props) => {
+const Header = ({title = null, goBackBtn = true, addBtn, theme = 'ackee', }) => {
 
-	// const history = useHistory();
+	let navigate = useNavigate();
+
+	const handleClick = (path) => {
+		navigate(path);
+	}
 
 	return (
-		<div className='header'>
-			<div className='title'>
-				{/* <Button outline color='primary' className='back_button' onClick={() => console.log('hello')}>
-					<i className="cil-arrow-left"></i>
-				</Button> */}
-				<h1>Recepty</h1>
-			</div>
-			<div className='add_item'>
-				{/* TODO: adjust position of the plus button to the center  */}
-				<Link to='/new-recipe'>
-					<i className="cil-plus"></i>
-				</Link>
+		<div className={`header ${theme !== 'ackee' ? 'reverse' : ''}`}>
+			<div className="header_content">
+				<div className='title'>
+					{goBackBtn && <Button
+						outline
+						color='primary'
+						className='back_button'
+						onClick={() => handleClick('/')}
+						>
+						<i className="cil-arrow-left"></i>
+					</Button> }
+					{title && <h1>{title}</h1>}
+				</div>
+				<div className='add_item'>
+					{addBtn && <Button
+						outline
+						color='primary'
+						className='back_button'
+						onClick={() => addBtn()}
+						>
+						<i className="cil-plus"></i>
+					</Button>}
+				</div>
 			</div>
 		</div>
 	)
