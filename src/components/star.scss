@@ -1,0 +1,17 @@
+.star_button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: #ffffff!important;
+}
+.off {
+	opacity: 45%;
+}
+
+.star_rating {
+	& button:disabled,
+	& button[disabled] {
+		cursor: initial;
+	}
+}
