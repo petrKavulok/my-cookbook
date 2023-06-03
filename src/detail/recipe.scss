@@ -1,7 +1,17 @@
-$ackee-blue: #0E00FF;
-$ackee-pink: #FF02FF;
+@import '../assets/styles';
+
+.form-wrapper {
+	max-width: 650px;
+	margin: auto;
+	// margin-top: 70px;
+}
+
+.mt-70 {
+	margin-top: 70px!important;
+}
 
 .create_recipe_form {
+	max-width: 650px;
 	padding: 1.5rem;
 	input {
 		border: 0px;
@@ -13,6 +23,7 @@ $ackee-pink: #FF02FF;
 		color: $ackee-blue;
 		text-transform: uppercase;
 		text-align: start;
+		font-size: unset;
 	}
 }
 
@@ -24,8 +35,20 @@ $ackee-pink: #FF02FF;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	&:first-of-type {
+		margin-top: 70px!important;
+	}
+	& input:focus, .form-control:focus {
+		box-shadow: unset;
+		border-bottom: 2px solid $ackee-blue;
+		transition: 0.1s;
+		caret-color: $ackee-blue;
+	}
 	.input_error {
 		color: rgb(233, 161, 161);
+	}
+	.form_text {
+		display: none;
 	}
 }
 
@@ -47,16 +70,24 @@ $ackee-pink: #FF02FF;
 		color: $ackee-blue;
 		font-weight: bold;
 	}
+	.recipe_rating_wrapper {
+		background-color: $ackee-pink;
+	}
 	.recipe_rating {
+		max-width: 1000px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		height: 60px;
 		background-color: $ackee-pink;
 		color:white;
 		font-weight: bold;
+		margin: auto;
 	}
 	.recipe_info {
 		font-weight: bold;
+
+		max-width: 1000px;
 	}
 	.ingredience_list li{
 		text-align: start;
@@ -71,19 +102,43 @@ $ackee-pink: #FF02FF;
 		color: white;
 		h3 {
 			color: white;
+			margin-bottom: unset;
+		}
+		.star_rating {
+			font-size: 40px;
 		}
 	}
+	.recipe_cover {
+		height: 380px;
+		background-image: linear-gradient(rgba(143, 100, 148, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/spirited-away-feast.avif');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position-x: center;
+		display: flex;
+		flex-direction: column-reverse;
+		&_text h1 {
+			color: white;
+			font-weight: bold;
+		}
+	}
+	.wrapper {
+		max-width: 1000px;
+	}
 }
+
+.form-floating > .form-control {
+	padding: unset;
+}
+
+.form-floating > label {
+	padding-left: 0;
+}
+
 
 	.append_button {
 		color: $ackee-pink;
 		border: 2px solid $ackee-pink;
 		transition-duration: 0.4s;
-		// &:hover {
-		// 	color: white;
-		// 	background-color: $ackee-pink;
-		// 	border: 4px solid $ackee-pink;
-		// }
 	}
 
 	.append_button:hover {
@@ -95,4 +150,61 @@ $ackee-pink: #FF02FF;
 
 	.ingredient_item {
 		margin-top: 0.5rem;
+	}
+
+	@media (min-width: 786px) {
+		.wrapper {
+			display: flex;
+			margin: auto;
+			.recipe_ingredients {
+				min-width: 40%;
+			}
+		}
+		.recipe {
+			& .recipe_info, .recipe_description {
+				margin: auto;
+			}
+			& .recipe_cover_text {
+				margin: 0 auto;
+			}
+		}
+		.recipe_ingredients {
+			padding-right: 1.5rem!important;
+		}
+		.recipe_description {
+			padding-left: 1.5rem!important;
+			margin: auto;
+		}
+		.recipe_user_rating {
+			h3, .star_rating {
+				font-size: 1.5rem!important;
+			}
+		}
+		.recipe_cover_text {
+			// margin
+		}
+	}
+
+	.alert {
+		top: 60px;
+		width: 300px;
+		position: fixed;
+		z-index: 10;
+		margin: 0 5vw;
+		top: 60px;
+		width: 80vw;
+		max-width: 500px;
+		background-color: #4b42ffaa;
+		color: white;
+		font-weight: bold;
+		text-align: start;
+		box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15);
+	}
+
+	@media (min-width: 992px) {
+		.recipe {
+			div[class^="recipe_"], div[class*=" recipe_"] {
+				// padding: 0 10rem;
+			}
+		}
 	}
