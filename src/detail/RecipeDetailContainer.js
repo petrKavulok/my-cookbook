@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import logo from '../assets/ackee_placeholder.png';
-import { useSearchParams, useLocation } from 'react-router-dom';
-import { getLogo, Rating } from '../components';
-// import '../components/star.scss'
-
+import { useSearchParams, useLocation, useNavigate } from 'react-router-dom';
+import { Rating } from '../components';
+import Header from '../containers/Header';
 
 const RecipeDetailContainer = (props) => {
 
@@ -15,7 +13,7 @@ const RecipeDetailContainer = (props) => {
 
 	// TODO: replace this sketchy way of getting path with something more soficticated
 	const id = useLocation().pathname.split('/detail/').pop();
-	// let src;
+	let navigate = useNavigate();
 
 	useEffect(() => {
 		getDetailInfo();
@@ -24,11 +22,9 @@ const RecipeDetailContainer = (props) => {
 
 	const getUserRatingFromLS = () => {
 		let rtng = window.localStorage.getItem(id);
-		// console.error('rtgn', rtng)
 		if (rtng !== null) {
 			setRatingFromLS(rtng);
 			setDisableRating(true);
-			console.warn('inside if statement', rtng)
 		}
 	}
 
@@ -67,41 +63,45 @@ const RecipeDetailContainer = (props) => {
 
 	return (
 		<>
+			<Header addBtn={() => navigate('/new-recipe')} theme='detail'/>
 			{recipe ?
 			<div className='recipe'>
-				<h1>{recipe && recipe.name}</h1>
-				<div className='recipe_rating'>
-					<Rating disabled={true} score={recipe.score} />
-					<div className='duration'>
-						<i className='cil-clock pr-2'></i>
-						<span>{recipe && recipe.duration} min.</span>
+				<div className='recipe_cover'>
+					<div  className='recipe_cover_text p-0'>
+						<h1>{recipe && recipe.name}</h1>
 					</div>
-
 				</div>
-
+				<div className='recipe_rating_wrapper'>
+					<div className='recipe_rating'>
+						<Rating disabled={true} score={recipe.score} />
+						<div className='duration'>
+							<i className='cil-clock pr-2'></i>
+							<span>{recipe && recipe.duration} min.</span>
+						</div>
+					</div>
+				</div>
 				<div className='recipe_info mt-4'>
 					{recipe && recipe.info}
 				</div>
-
-				<div className='recipe_ingredients mt-4'>
-					<h3>Ingredience</h3>
-					<ul className='ingredience_list'>
-						{recipe.ingredients && recipe?.ingredients.map((ingredient, i) => {
-							return (
-								<li>{ingredient}</li>
-							)
-						})}
-					</ul>
+				<div className='wrapper'>
+					<div className='recipe_ingredients mt-4'>
+						<h3>Ingredience</h3>
+						<ul className='ingredience_list'>
+							{recipe.ingredients && recipe?.ingredients.map((ingredient, i) => {
+								return (
+									<li>{ingredient}</li>
+									)
+								})}
+						</ul>
+					</div>
+					<div className='recipe_description mt-4'>
+						<h3>Příprava jídla</h3>
+						{recipe && recipe.description}
+					</div>
 				</div>
-
-				<div className='recipe_description mt-4'>
-					<h3>Příprava jídla</h3>
-					{recipe && recipe.description}
-				</div>
-
 				<div className='recipe_user_rating mt-4'>
 					<h3>Ohodnoť tento recept</h3>
-					<Rating disabled={disableRating} score={ratingFromLS} id={id}/>
+					<Rating disabled={disableRating} score={ratingFromLS} id={id} postRate={rate}/>
 				</div>
 			</div>
 			:
