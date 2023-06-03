@@ -8,11 +8,14 @@ const ListItemCard = ({recipe}) => {
 
 	return (
 		<div className='recipe_list_item'>
-			<img
-				src={recipe.img ?? logo}
-				alt={recipe.name}
-				className='list_item_cover_pic'>
-			</img>
+			<Link to={`/detail/${recipe.id}`}>
+				<img
+					src={recipe.img ?? logo}
+					alt={recipe.name}
+
+					className='list_item_cover_pic'>
+				</img>
+			</Link>
 			<div className='list_item_info'>
 				<Link to={`/detail/${recipe.id}`}>
 					<h2>{recipe.name}</h2>
