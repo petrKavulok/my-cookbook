@@ -33,7 +33,6 @@ function App() {
 return (
 		<Router>
 			<div className="App">
-				<Header />
 				<Suspense fallback={<img src={logo}/>}>
 					<Routes>
 						{routes.map((route, idx) => {
