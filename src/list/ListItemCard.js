@@ -21,8 +21,10 @@ const ListItemCard = ({recipe}) => {
 					<h2>{recipe.name}</h2>
 				</Link>
 				<div className='list_item_rating'>
-					<img src={src}></img>
-					{/* {recipe.score} */}
+					<img
+						src={src}
+						alt={`Recipe rating - ${recipe.score} stars`}
+					></img>
 				</div>
 				<div className='list_item_duration'>
 					<i className='cil-clock pr-2'></i>
