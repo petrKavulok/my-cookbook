@@ -1,6 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Header } from './containers';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import logo from './assets/ackee_placeholder.png';
 import List from './list';
 import './App.scss';
@@ -33,7 +32,7 @@ function App() {
 return (
 		<Router>
 			<div className="App">
-				<Suspense fallback={<img src={logo}/>}>
+				<Suspense fallback={<img src={logo} alt='Logo'/>}>
 					<Routes>
 						{routes.map((route, idx) => {
 							return (
@@ -48,7 +47,6 @@ return (
 						})}
 					</Routes>
 				</Suspense>
-					{/* <List /> */}
 			</div>
 		</Router>
 );
