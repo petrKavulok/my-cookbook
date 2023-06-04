@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import ListItemCard from './ListItemCard';
-import './list.scss';
 import { Header } from '../containers';
 import { useNavigate } from 'react-router-dom/dist';
+import { Container, Button } from 'reactstrap';
 
-import { Container } from 'reactstrap';
+import './list.scss';
 
 const List = () => {
 
@@ -17,9 +17,12 @@ const List = () => {
 		getList();
 	}, []);
 
+	useEffect(() => {
+		getList();
+	}, [limit])
+
 	const getList = async () => {
-		let url = 'https://private-anon-354a253d8b-cookbook3.apiary-mock.com/api/v1/recipes';
-		// let url = `https://cookbook.ack.ee/api/v1/recipes?limit=${limit}&offset=0`;
+		let url = `https://private-anon-354a253d8b-cookbook3.apiary-mock.com/api/v1/recipes?limit=${limit}&offset=0`;
 		try {
 			const response = await fetch(url, {
 				method: "GET", // *GET, POST, PUT, DELETE, etc.
@@ -28,7 +31,6 @@ const List = () => {
 				}
 			});
 			const jsonData = await response.json();
-			console.log('jsonData: ', jsonData);
 			setRecipes(jsonData);
 		} catch (error) {
 			console.error(`Looks like we ain't eatin' tonight..`, error);
@@ -52,6 +54,16 @@ const List = () => {
 				}
 				</div>
 			</Container>
+			{(recipes.length === limit) &&
+				<Button
+					outline
+					color='primary'
+					className='mt-3'
+					onClick={() => setLimit(prev => prev + 10)}
+				>
+					Více...
+				</Button>
+			}
 		</>
 	)
 };
