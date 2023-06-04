@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Rating } from '../components';
 import Header from '../containers/Header';
 
 const RecipeDetailContainer = (props) => {
 
-	const [searchParams, setSearchParams] = useSearchParams();
 	const [recipe, setRecipe] = useState({});
-	const [rating, setRating] = useState(0);
 	const [ratingFromLS, setRatingFromLS] = useState(0);
 	const [disableRating, setDisableRating] = useState(false);
 
