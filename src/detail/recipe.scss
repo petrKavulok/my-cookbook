@@ -3,7 +3,6 @@
 .form-wrapper {
 	max-width: 650px;
 	margin: auto;
-	// margin-top: 70px;
 }
 
 .mt-70 {
@@ -138,77 +137,65 @@
 	padding-left: 0;
 }
 
+.append_button {
+	color: $ackee-pink;
+	border: 2px solid $ackee-pink;
+	transition-duration: 0.4s;
+}
 
-	.append_button {
-		color: $ackee-pink;
-		border: 2px solid $ackee-pink;
-		transition-duration: 0.4s;
-	}
-
-	.append_button:hover {
-		color: white;
-		background-color: $ackee-pink;
-		border: 2px solid $ackee-pink;
-	}
+.append_button:hover {
+	color: white;
+	background-color: $ackee-pink;
+	border: 2px solid $ackee-pink;
+}
 
 
-	.ingredient_item {
-		margin-top: 0.5rem;
-	}
+.ingredient_item {
+	margin-top: 0.5rem;
+}
 
-	@media (min-width: 786px) {
-		.wrapper {
-			display: flex;
-			margin: auto;
-			.recipe_ingredients {
-				min-width: 40%;
-			}
-		}
-		.recipe {
-			& .recipe_info, .recipe_description {
-				margin: auto;
-			}
-			& .recipe_cover_text {
-				margin: 0 auto;
-			}
-		}
+@media (min-width: 786px) {
+	.wrapper {
+		display: flex;
+		margin: auto;
 		.recipe_ingredients {
-			padding-right: 1.5rem!important;
+			min-width: 40%;
 		}
-		.recipe_description {
-			padding-left: 1.5rem!important;
+	}
+	.recipe {
+		& .recipe_info, .recipe_description {
 			margin: auto;
 		}
-		.recipe_user_rating {
-			h3, .star_rating {
-				font-size: 1.5rem!important;
-			}
-		}
-		.recipe_cover_text {
-			// margin
+		& .recipe_cover_text {
+			margin: 0 auto;
 		}
 	}
+	.recipe_ingredients {
+		padding-right: 1.5rem!important;
+	}
+	.recipe_description {
+		padding-left: 1.5rem!important;
+		margin: auto;
+	}
+	.recipe_user_rating {
+		h3, .star_rating {
+			font-size: 1.5rem!important;
+		}
+	}
+}
 
-	.alert {
-		top: 60px;
-		width: 300px;
-		position: fixed;
-		z-index: 10;
-		margin: 0 5vw;
-		top: 60px;
-		width: 80vw;
-		max-width: 500px;
-		background-color: #4b42ffaa;
-		color: white;
-		font-weight: bold;
-		text-align: start;
-		box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15);
-	}
-
-	@media (min-width: 992px) {
-		.recipe {
-			div[class^="recipe_"], div[class*=" recipe_"] {
-				// padding: 0 10rem;
-			}
-		}
-	}
+.alert {
+	top: 60px;
+	width: 300px;
+	position: fixed;
+	z-index: 10;
+	margin: 0 5vw;
+	top: 60px;
+	width: 80vw;
+	max-width: 500px;
+	background-color: #4b42ffaa;
+	color: white;
+	font-weight: bold;
+	text-align: start;
+	box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15);
+}
