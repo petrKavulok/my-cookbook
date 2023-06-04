@@ -83,6 +83,10 @@
 		color:white;
 		font-weight: bold;
 		margin: auto;
+		.duration {
+			display: flex;
+			align-items: center;
+		}
 	}
 	.recipe_info {
 		font-weight: bold;
