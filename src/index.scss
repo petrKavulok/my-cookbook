@@ -3,7 +3,6 @@ body {
   font-family:  'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 code {
@@ -15,7 +14,6 @@ code {
   padding-right: 0.5rem;
 }
 
-// required to get $orange variable
 @import "./assets/styles/";
 
 $primary: $ackee-blue; // set the $primary variable
